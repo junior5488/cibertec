@@ -1,0 +1,9 @@
+<div class="columns" *ngIf="user">
+  <div class="column is-10 is-offset-1">
+    <h2 class="subtitle is-3 has-text-centered">Actualizar Usuario</h2>
+    <app-user-form
+      [model]="user"
+      (onSaveForm)="onSaveUser($event)"
+    ></app-user-form>
+  </div>
+</div>

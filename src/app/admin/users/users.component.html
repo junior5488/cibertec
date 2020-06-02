@@ -1,0 +1,41 @@
+<div class="columns">
+  <div class="column is-10 is-offset-1">
+    <h2 class="title has-text-centered is-2">Lista de Usuarios</h2>
+    <a class="button is-info" [routerLink]="['./new']">
+      Nuevo Usuario
+    </a>
+    <br />
+    <br />
+    <table class="table is-striped is-hoverable is-bordered is-fullwidth">
+      <thead>
+        <th *ngFor="let title of titles">
+          {{ title }}
+        </th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usr of users; let idx = index">
+          <td>{{ idx + 1 }}</td>
+          <td>{{ usr.name }}</td>
+          <td>{{ usr.lastName }}</td>
+          <td>{{ usr.email }}</td>
+          <td>{{ usr.role }}</td>
+          <td>{{ usr.phone }}</td>
+          <td>
+            <button
+              class="button is-small is-danger"
+              (click)="deleteUser(usr.id)"
+            >
+              Eliminar
+            </button>
+            <button
+              [routerLink]="['./', usr.id]"
+              class="button is-small is-info"
+            >
+              Editar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

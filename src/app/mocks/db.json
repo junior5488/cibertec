@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "name": "Junior",
+      "lastName": "Chavez Valverde",
+      "email": "junior05.88@gmail.com",
+      "role": "Administrador",
+      "password": "123456789",
+      "phone": "962429409",
+      "id": 1
+    },
+    {
+      "name": "Guillermo",
+      "lastName": "Chavez German",
+      "email": "joma54@gmail.com",
+      "role": "Analista Desarrollador",
+      "password": "123456789",
+      "phone": "962429409",
+      "id": 2
+    },
+    {
+      "name": "Jude",
+      "lastName": "Velarde Fuertes",
+      "email": "jude@hotmail.com",
+      "role": "Analista BD",
+      "password": "123456",
+      "phone": "15937540",
+      "id": 5
+    },
+    {
+      "name": "Flor de Maria",
+      "lastName": "Valverde",
+      "email": "flor2953@hotmail.com",
+      "role": "Analista HelpDesk",
+      "password": "123456",
+      "phone": "965429402",
+      "id": 6
+    }
+  ],
+  "rols": [
+    {
+      "id": 1,
+      "name": "Profesor"
+    },
+    {
+      "id": 2,
+      "name": "Alumno"
+    },
+    {
+      "id": 3,
+      "name": "Administrador"
+    }
+  ]
+}

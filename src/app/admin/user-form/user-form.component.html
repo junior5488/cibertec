@@ -1,0 +1,164 @@
+<div class="container">
+  <div class="columns">
+    <div class="column is-8 is-offset-2">
+      <form
+        novalidate
+        autocomplete="off"
+        [formGroup]="userForm"
+        (submit)="onSubmit()"
+      >
+        <div class="field">
+          <div class="control">
+            <input
+              class="input"
+              [class.is-danger]="
+                userForm.controls.name.invalid && userForm.controls.name.touched
+              "
+              type="text"
+              formControlName="name"
+              placeholder="Ingresar nombres"
+            />
+            <p
+              class="help is-danger"
+              *ngIf="
+                userForm.controls.name.invalid && userForm.controls.name.touched
+              "
+            >
+              El nombre es requerido.
+            </p>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input
+              class="input"
+              [class.is-danger]="
+                userForm.controls.lastName.invalid &&
+                userForm.controls.lastName.touched
+              "
+              type="text"
+              formControlName="lastName"
+              placeholder="Ingresar apellidos"
+            />
+            <p
+              class="help is-danger"
+              *ngIf="
+                userForm.controls.lastName.invalid &&
+                userForm.controls.lastName.touched
+              "
+            >
+              Los Apellidos son requeridos.
+            </p>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input
+              class="input"
+              [class.is-danger]="
+                userForm.controls.email.invalid &&
+                userForm.controls.email.touched
+              "
+              type="text"
+              formControlName="email"
+              placeholder="Ingresar correo electrónico"
+            />
+            <p
+              class="help is-danger"
+              *ngIf="
+                userForm.controls.email.invalid &&
+                userForm.controls.email.touched
+              "
+            >
+              El correo electrónico es requerido.
+            </p>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input
+              class="input"
+              [class.is-danger]="
+                userForm.controls.role.invalid && userForm.controls.role.touched
+              "
+              type="text"
+              formControlName="role"
+              placeholder="Ingresar roles"
+            />
+            <p
+              class="help is-danger"
+              *ngIf="
+                userForm.controls.role.invalid && userForm.controls.role.touched
+              "
+            >
+              El rol es requerido.
+            </p>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input
+              class="input"
+              [class.is-danger]="
+                userForm.controls.password.invalid &&
+                userForm.controls.password.touched
+              "
+              type="password"
+              formControlName="password"
+              placeholder="Ingresar contraseña, mínimo 6 caracteres"
+            />
+            <p
+              class="help is-danger"
+              *ngIf="
+                userForm.controls.password.invalid &&
+                userForm.controls.password.touched
+              "
+            >
+              La contraseña es requerida, minimo de caracteres (6).
+            </p>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input
+              class="input"
+              [class.is-danger]="
+                userForm.controls.phone.invalid &&
+                userForm.controls.phone.touched
+              "
+              type="text"
+              formControlName="phone"
+              placeholder="Telefono"
+            />
+            <p
+              class="help is-danger"
+              *ngIf="
+                userForm.controls.phone.invalid &&
+                userForm.controls.phone.touched
+              "
+            >
+              El número telefónico es requerido, minimo de caracteres (7).
+            </p>
+          </div>
+        </div>
+        <div class="field is-grouped is-grouped-centered">
+          <p class="control">
+            <button type="button" class="button" (click)="onBack()">
+              Regresar
+            </button>
+          </p>
+          <p class="control">
+            <button
+              type="submit"
+              class="button is-dark"
+              [class.is-loading]="isLoading"
+              [disabled]="userForm.invalid"
+            >
+              Guardar
+            </button>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

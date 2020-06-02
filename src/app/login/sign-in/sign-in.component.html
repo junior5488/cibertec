@@ -1,0 +1,48 @@
+<div class="container">
+  <section id="content">
+    <form action="" novalidate autocomplete="off" #loginForm="ngForm">
+      <h1>Bienvenido</h1>
+      <div>
+        <input
+          [class.is-danger]="email.invalid && email.touched"
+          name="email"
+          #email="ngModel"
+          [(ngModel)]="model.email"
+          type="email"
+          required
+          email
+          id="username"
+        />
+        <p class="help is-danger" *ngIf="email.invalid && email.touched">
+          El usuario es requerido, debe ser un email válido.
+        </p>
+      </div>
+      <div>
+        <input
+          [class.is-danger]="password.invalid && password.touched"
+          name="password"
+          #password="ngModel"
+          [(ngModel)]="model.password"
+          type="password"
+          required
+          minlength="6"
+          id="password"
+        />
+        <p class="help is-danger" *ngIf="password.invalid && password.touched">
+          La contraseña es requerida, debe contener al menos 6 caracteres
+        </p>
+      </div>
+      <div class="columns is-centered">
+        <p class="help is-danger" *ngIf="error">
+          {{ error }}
+        </p>
+        <input
+          type="submit"
+          (click)="onSubmit()"
+          style="margin-top: 10px;"
+          value="Ingresar"
+        />
+      </div>
+    </form>
+  </section>
+</div>
